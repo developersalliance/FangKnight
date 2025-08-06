@@ -1,0 +1,540 @@
+<!doctype html>
+<html lang="en" class="h-full" xmlns:x-intersect="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FangKnight</title>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.8/dist/cdn.min.js"></script>
+    <link rel="stylesheet" href="https://use.typekit.net/hvy8trx.css">
+    <link rel="stylesheet" href="https://use.typekit.net/hvy8trx.css">
+    <link rel="stylesheet" href="https://use.typekit.net/mgj3yty.css">
+    <link href="./output.css" rel="stylesheet" />
+</head>
+<body class="h-full font-[eb-garamond]"  x-data="{ scrolled: false }" @scroll.window="scrolled = window.scrollY > 380;">
+<section>
+    <div class="justify-self-center h-[732px] md:h-[1142px] w-full bg-[url('images/1.jpeg')] bg-cover bg-center bg-no-repeat md:bg-fixed">
+        <div class="mx-auto max-w-[894px] pt-56  md:pt-64 text-center">
+            <img src="images/13.png" />
+            <div class="mt-6 flex justify-center gap-4">
+                <a href="#deliverMe" >
+                    <button class="bg-opacity-60 hover:bg-opacity-80 rounded-lg bg-black px-6 py-3 text-white underline cursor-pointer">Deliver Me!</button>
+                </a>
+                <a href="#contacts">
+                    <button
+                            class="rounded-lg bg-black bg-opacity-60 hover:bg-opacity-80 px-6 py-3 text-white underline transition-transform duration-300 ease-in-out z-50"
+                            :class="scrolled ? 'fixed  top-[4%] translate-x-[calc(15vw_-_2rem)] md:translate-x-[calc(35vw_-_2rem)]  opacity-60 z-50' : 'bg-opacity-60'"
+                    >
+                        Bite Me!!
+                    </button>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="bg-black">
+    <div
+            x-data="{
+    scale: 1,
+    prevY: 0,
+    init() { this.prevY = window.scrollY },
+    onScroll() {
+      const y    = window.scrollY
+      const diff = this.prevY - y
+      this.scale  = Math.min(2, Math.max(1, this.scale + diff / 300))
+      this.prevY  = y
+    }
+  }"
+            x-init="init()"
+            @scroll.window="onScroll()"
+            class="min-h-screen relative"
+    >
+        <h1
+                :style="`transform: translate(-50%, -50%) scale(${window.innerWidth <= 768 ? Math.min(scale, 1.5) : scale})`"
+                class="absolute top-1/2 left-1/2 text-6xl text-[#CC2027] font-semibold font-[cormorant-sc] origin-center transition-transform duration-200 ease-out"
+        >
+            Be the monster
+        </h1>
+    </div>
+</section>
+<section class="bg-black grid gap-[400px]">
+    <div class="grid gap-2.5 pt-[295px] pb-[216px] text-center">
+        <h2
+                x-data="{ visible: false }"
+                x-init="
+        new IntersectionObserver((entries) => {
+          visible = entries[0].isIntersecting
+        }, { threshold: 0.1 }).observe($el)
+      "
+                :class="visible ? 'opacity-100' : 'opacity-0'"
+                class="opacity-0 font-[cormorant-sc] font-semibold transition-opacity duration-700 ease-in-out max-w-[519px] justify-self-center-safe text-3xl text-white"
+        >
+            From the quill of Mark Rein•Hagen,
+        </h2>
+
+        <h2
+                x-data="{ visible: false }"
+                x-init="
+        new IntersectionObserver((entries) => {
+          visible = entries[0].isIntersecting
+        }, { threshold: 0.1 }).observe($el)
+      "
+                :class="visible ? 'opacity-100' : 'opacity-0'"
+                class="opacity-0 font-[cormorant-sc] font-semibold transition-opacity duration-700 ease-in-out max-w-[519px] justify-self-center-safe text-3xl text-white"
+        >
+            creator of Vampire: The Masquerade…
+        </h2>
+    </div>
+
+    <h1
+            x-data="{ visible: false }"
+            x-init="
+      new IntersectionObserver((entries) => {
+        visible = entries[0].isIntersecting
+      }, { threshold: 0.1 }).observe($el)
+    "
+            :class="visible ? 'opacity-100' : 'opacity-0'"
+            class="opacity-0 font-[cormorant-sc] font-semibold transition-opacity pt-[295px] duration-700 ease-in-out max-w-[906px] justify-self-center-safe pb-[313px] text-center text-3xl text-white"
+    >
+        …comes a new tale of gothic horror, medieval corruption, and monstrous power.
+    </h1>
+</section>
+<section class="justify-self-center h-[94%] w-full bg-black bg-[url('images/2.jpeg')] bg-cover bg-center bg-no-repeat"></section>
+<section class="grid gap-10  justify-center h-screen bg-[#020001] pt-[106px] pb-[100px]">
+    <a name="contacts"></a>
+    <div class="max-w-[519px] justify-self-center-safe text-center text-5xl text-[#CC2027]">
+        <h2 class="font-[cormorant-sc] text-3xl  md:text-5xl font-semibold">
+            Become a FangKnight. <br> Give us your email <br />
+            to not miss the Kickstarter.
+        </h2>
+    </div>
+    <div class="justify-self-center">
+        <form class="grid w-full max-w-[330px] md:max-w-[580px] justify-items-center gap-5 justify-self-center" id="sib-form" method="POST" action="https://9c6d0252.sibforms.com/serve/MUIFAN3zdGeV4rZW6r6XbQu_zlPsaONk5havhRV8YqF1E-D6OfUsat92WZs8qHrclsDUH7g_hb8toQNikrr7fOefdMhI4Jp_wLlUdcp1_vLf-hJEMCB-DSBu8owFpSnt6peR9DmfcWd5Vx0JBxw2rDX1hNxnTifqQ399360Vh6bKIwbN_WxR1KCc-keUXEBhQf-aDjSlOzJzFChA">
+            <input class="input w-full rounded-[8px] bg-white px-4 py-2 text-base text-[#CC2027]" maxlength="200" type="text" id="FIRSTNAME" name="FIRSTNAME" autocomplete="off" placeholder="FIRST NAME" data-required="true" required />
+            <input class="input w-full rounded-[8px] bg-white px-4 py-2 text-base text-[#CC2027]" maxlength="200" type="text" id="LASTNAME" name="LASTNAME" autocomplete="off" placeholder="LAST NAME" />
+            <input class="input w-full rounded-[8px] bg-white px-4 py-2 text-base text-[#CC2027]" type="text" id="EMAIL" name="EMAIL" autocomplete="off" placeholder="EMAIL" data-required="true" required />
+            <input type="text" name="email_address_check" value="" class="input--hidden">
+            <input type="hidden" name="locale" value="en">
+            <input type="hidden" name="html_type" value="simple">
+
+            <button class="w-full cursor-pointer rounded-[8px] bg-[#2C2C2C] md:px-[214px] py-[12px] text-white" type="submit">Bite Me!</button>
+        </form>
+    </div>
+</section>
+<section class="grid grid-cols-2 items-center justify-items-center bg-[#2C2C2C] md:bg-[#773B3D]">
+    <div class="p-[25px] md:p-0">
+        <p class="md:text-2xl text-base text-white">
+            You are the predator, the villain, <br />
+            the beast that lives forever and <br />
+            feeds on fear.
+        </p>
+        <p class="md:text-2xl text-base text-white">A cursed knight.</p>
+        <p class="md:text-2xl text-base text-white">An irredeemable monster.</p>
+        <p class="md:text-2xl text-base text-white">A half-dead legend soaked in blood...</p>
+        <p class="md:text-2xl text-base text-white">and full of hunger.</p>
+    </div>
+    <img src="images/3.png" width="705" alt="cover1" class="justify-self-end" />
+</section>
+<section
+        x-data="{
+    current: 0,
+    items: [
+      'Be the vampire. The warlord. The oathbreaker.',
+      'Choose your legacy from Seven Bloodlines and Seven Covens, each a web of dark allegiances and bitter rivalries.',
+      'Embrace Hunger and Blight—and fight off the Fiend.'
+    ],
+    prev() { this.current = this.current > 0 ? this.current - 1 : this.items.length - 1 },
+    next() { this.current = this.current < this.items.length - 1 ? this.current + 1 : 0 }
+  }"
+        class="bg-[#E9C7AC] pt-16"
+>
+    <h2 class="text-[#CC2027] font-[cormorant-sc] text-4xl font-semibold md:text-6xl text-center mb-12">
+        You Are the Monster
+    </h2>
+
+    <div class="flex flex-col-reverse lg:flex-row items-center gap-2 justify-center lg:space-x-8">
+        <button
+                @click="prev()"
+                class="p-3 rounded-full bg-white shadow-lg hover:bg-[#CC2027] hover:text-white transition-colors"
+                aria-label="Previous"
+        >
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+            </svg>
+        </button>
+
+        <div class="overflow-hidden max-w-[359px]  lg:max-w-[513px]">
+            <ul
+                    class="flex transition-transform duration-500 ease-in-out items-center"
+                    :style="`transform: translateX(-${current * 100}%)`"
+            >
+                <template x-for="(txt, i) in items" :key="i">
+                    <li class="flex-shrink-0 items-center text-xl md:text-2xl px-6 w-full">
+                        <span x-text="txt"></span>
+                    </li>
+                </template>
+            </ul>
+        </div>
+
+        <button
+                @click="next()"
+                class="p-3 rounded-full bg-white shadow-lg hover:bg-[#CC2027] hover:text-white transition-colors"
+                aria-label="Next"
+        >
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+        </button>
+
+        <div class=" flex justify-center">
+            <img src="images/4.png" alt="img2" class="max-w-full h-auto" />
+        </div>
+    </div>
+</section>
+<section
+        x-data="{
+    current: 0,
+    items: [
+      'FangKnights are guardians of the maw, vampiric lords who stand sword-drawn atop the Fireholds towering fortresses built less repel invaders, but to contain the nightmare rising from the Abysma below',
+      'Each Firehold is a last redoubt, its inner walls facing inward toward the hungry dark. Knaves patrol the halls, Firefolk serve in fear and awe, and all swear loyalty to their sworn bloodlords.',
+      'Beneath the oath lies a knife—for each Firehold is torn by bitter rivalries among Bloodlines, Covens, and Malices.',
+      'Within its shadowed halls, vampires rule, scheme, and feed, guarding the world from the Abysma below… for a price.'
+    ],
+    prev() { this.current = this.current > 0 ? this.current - 1 : this.items.length - 1 },
+    next() { this.current = this.current < this.items.length - 1 ? this.current + 1 : 0 }
+  }"
+        class="bg-[#E9C7AC] pt-16"
+>
+    <h2 class="text-[#CC2027] font-[cormorant-sc] text-4xl font-semibold md:text-6xl text-center mb-12">
+        Sword to the Firehold
+    </h2>
+
+    <div class="flex flex-col-reverse lg:flex-row items-center gap-2 justify-center lg:space-x-8">
+        <button
+                @click="prev()"
+                class="p-3 rounded-full bg-white shadow-lg hover:bg-[#CC2027] hover:text-white transition-colors"
+                aria-label="Previous"
+        >
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+            </svg>
+        </button>
+
+        <div class="overflow-hidden max-w-[359px]  lg:max-w-[513px]">
+            <ul
+                    class="flex transition-transform duration-500 ease-in-out"
+                    :style="`transform: translateX(-${current * 100}%)`"
+            >
+                <template x-for="(txt, i) in items" :key="i">
+                    <li class="flex-shrink-0 items-center text-xl md:text-2xl px-6 w-full">
+                        <span x-text="txt"></span>
+                    </li>
+                </template>
+            </ul>
+        </div>
+
+        <button
+                @click="next()"
+                class="p-3 rounded-full bg-white shadow-lg hover:bg-[#CC2027] hover:text-white transition-colors"
+                aria-label="Next"
+        >
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+        </button>
+
+        <div class=" flex justify-center">
+            <img src="images/5.png" alt="img2" class="max-w-full h-auto" />
+        </div>
+    </div>
+</section>
+<section
+        x-data="{
+    current: 0,
+    items: [
+        'Play out blood court trials to dungeon raids, political coups, and vampire duels.',
+        'Carve your story into the haunted world of Lostlorn, where Fireholds rise like teeth from the abyss, and every mask hides a threat.',
+        'Use the Crux20 System—a fast, intuitive d20 engine built for dramatic decisions and brutal consequences.'
+
+    ],
+    prev() { this.current = this.current > 0 ? this.current - 1 : this.items.length - 1 },
+    next() { this.current = this.current < this.items.length - 1 ? this.current + 1 : 0 }
+  }"
+        class="bg-[#E9C7AC] pt-16"
+>
+    <h2 class="text-[#CC2027] font-[cormorant-sc] text-4xl font-semibold md:text-6xl text-center mb-12">
+        A Gothic World of Vile Uncanny
+    </h2>
+
+    <div class="flex flex-col-reverse lg:flex-row items-center gap-2 justify-center lg:space-x-8">
+        <button
+                @click="prev()"
+                class="p-3 rounded-full bg-white shadow-lg hover:bg-[#CC2027] hover:text-white transition-colors"
+                aria-label="Previous"
+        >
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+            </svg>
+        </button>
+
+        <div class="overflow-hidden max-w-[359px]  lg:max-w-[513px]">
+            <ul
+                    class="flex transition-transform duration-500 ease-in-out"
+                    :style="`transform: translateX(-${current * 100}%)`"
+            >
+                <template x-for="(txt, i) in items" :key="i">
+                    <li class="flex-shrink-0 items-center text-xl md:text-2xl px-6 w-full">
+                        <span x-text="txt"></span>
+                    </li>
+                </template>
+            </ul>
+        </div>
+
+        <button
+                @click="next()"
+                class="p-3 rounded-full bg-white shadow-lg hover:bg-[#CC2027] hover:text-white transition-colors"
+                aria-label="Next"
+        >
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+        </button>
+
+        <div class=" flex justify-center">
+            <img src="images/6.png" alt="img2" class="max-w-full h-auto" />
+        </div>
+    </div>
+</section>
+<section
+        x-data="{
+    current: 0,
+    items: [
+        'Tactical. Story-driven. Emotionally lethal.',
+        'Design your character in minutes. Master the system in play.',
+        'Cross-format: Works for tabletop, online, or LARP.',
+        'Compatible with 5e, but proudly its own creature.'
+
+    ],
+    prev() { this.current = this.current > 0 ? this.current - 1 : this.items.length - 1 },
+    next() { this.current = this.current < this.items.length - 1 ? this.current + 1 : 0 }
+  }"
+        class="bg-[#E9C7AC] pt-16 pb-16"
+>
+    <h2 class="text-[#CC2027] font-[cormorant-sc] text-4xl font-semibold md:text-6xl text-center mb-12">
+        Dark Fantasy With A Bite
+    </h2>
+
+    <div class="flex flex-col-reverse lg:flex-row items-center gap-2 justify-center lg:space-x-8">
+        <button
+                @click="prev()"
+                class="p-3 rounded-full bg-white shadow-lg hover:bg-[#CC2027] hover:text-white transition-colors"
+                aria-label="Previous"
+        >
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+            </svg>
+        </button>
+
+        <div class="overflow-hidden max-w-[359px]  lg:max-w-[513px]">
+            <ul
+                    class="flex transition-transform duration-500 ease-in-out"
+                    :style="`transform: translateX(-${current * 100}%)`"
+            >
+                <template x-for="(txt, i) in items" :key="i">
+                    <li class="flex-shrink-0 items-center text-xl md:text-2xl px-6 w-full">
+                        <span x-text="txt"></span>
+                    </li>
+                </template>
+            </ul>
+        </div>
+
+        <button
+                @click="next()"
+                class="p-3 rounded-full bg-white shadow-lg hover:bg-[#CC2027] hover:text-white transition-colors"
+                aria-label="Next"
+        >
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+        </button>
+
+        <div class=" flex justify-center">
+            <img src="images/7.png" alt="img2" class="max-w-full h-auto" />
+        </div>
+    </div>
+</section>
+<section
+        x-data="{
+    imgVisible: false,
+    textVisible: false,
+    offset: 0,
+    top: 0,
+    height: 0,
+    init() {
+      this.top    = $el.offsetTop
+      this.height = $el.offsetHeight
+      this.imgVisible = true
+      setTimeout(() => this.textVisible = true, 1000)
+      window.addEventListener('scroll', () => {
+        let rel = window.scrollY - this.top
+        rel = Math.max(0, Math.min(rel, this.height))
+        this.offset = rel
+      })
+    }
+  }"
+        x-init="init()"
+        class="relative overflow-hidden h-[1331px]"
+>
+    <div
+            x-show="imgVisible"
+            x-transition.opacity.duration.1000ms
+            class="absolute inset-0 z-0 bg-[url('images/8.png')] bg-cover bg-center bg-no-repeat"
+    ></div>
+
+    <div
+            x-show="textVisible"
+            x-transition:enter.opacity.duration.800ms.delay.300ms
+            class="relative z-10 grid grid-cols-2 items-center h-full"
+            :style="`transform: translateY(-${offset * 0.2}px)`"
+    >
+        <div class="pl-[27px]">
+            <h2 class="text-white font-[cormorant-sc] font-semibold text-6xl pb-[185px]">Heroes die—</h2>
+            <h2 class="text-white font-[cormorant-sc] font-semibold text-6xl">Monsters endure</h2>
+        </div>
+        <p class="text-2xl text-white self-end pb-[76px]">
+            This isn’t about saving the day.<br />
+            This is about feeding in the dark.<br />
+            Making the world remember your name.<br />
+            And becoming what even demons fear.
+        </p>
+    </div>
+</section>
+<section class="lg:bg-[#1F1914] bg-[#000000]">
+    <h2 class="text-[#CC2027] font-[cormorant-sc] font-semibold text-6xl text-center pt-[92px] pb-[101px]">The Rules</h2>
+    <div class="grid lg:grid-cols-2 gap-2 p-5 lg:gap-0 items-center justify-items-center lg:pb-[50px]">
+        <div class="max-w-[513px]">
+            <p class="text-2xl text-white pb-4.5">
+                Start playing in minutes. Learn as you go.
+            </p>
+            <p class="text-2xl text-white pb-[104px]">
+                Narrativist Old School Rules with no padding and no mercy.
+            </p>
+            <p class="text-2xl text-white">
+                <b>Crux20 System</b>—Elegant d20 rules married to dots-style progression
+            </p>
+            <p class="text-2xl text-white">
+                <b>Quick Start</b>—Be ready to battle in minutes
+            </p>
+            <p class="text-2xl text-white">
+                <b>Zone Combat</b>—Tactical and cinematic; deadly in simplicity
+            </p>
+            <p class="text-2xl text-white">
+                <b>Narrative-First</b>—Your story matters more than the numbers
+            </p>
+        </div>
+        <img src="images/9.png" alt="img2" class="row-start-1">
+    </div>
+</section>
+<section class="lg:bg-[#1F1914] bg-[#000000]">
+    <a name="deliverMe"></a>
+    <div class="grid lg:grid-cols-2 md:gap-2 gap-8  p-5 lg:gap-0 items-center justify-items-center md:pb-[50px]">
+        <div class="max-w-[513px]">
+            <h3 class="text-[#CC2027] font-[cormorant-sc] font-bold text-3xl md:text-5xl pb-5">Deliver me <br class="hidden sm:inline" />
+                the free <br class="hidden sm:inline" />
+                PDF preview </h3>
+                <form id="sib-form" class="grid w-full max-w-[330px] md:max-w-[580px] justify-items-center gap-5 justify-self-center" method="POST" action="https://9c6d0252.sibforms.com/serve/MUIFAMLcJn9uhcvmFV2eeeoCdPLKhvgNgBB8NKIvHG5Jtw2a7Z4p1vVZ-OJKr50y8_CC9dGSiQmjmIn6C43hwWNG6ZAUS2DHeC1hKcNh13zvZ08XyOQycJkRBiDWBGEVaI5OxrVcyn2berv3eBNpWaDozvVDhy5ww3BfS6eNoywRDRwpTNt0B8imjjd90nGgOBy8uvixsqClI-SH">
+                <input class="input w-full rounded-[8px] bg-white px-4 py-2 text-base text-[#CC2027]"  maxlength="200" type="text" id="FIRSTNAME" name="FIRSTNAME" autocomplete="off" placeholder="FIRST NAME" data-required="true" required />
+                <input class="input w-full rounded-[8px] bg-white px-4 py-2 text-base text-[#CC2027]" maxlength="200" type="text" id="LASTNAME" name="LASTNAME" autocomplete="off" placeholder="LAST NAME"  />
+                <input class="input w-full rounded-[8px] bg-white px-4 py-2 text-base text-[#CC2027]"  type="text" id="EMAIL" name="EMAIL" autocomplete="off" placeholder="EMAIL" data-required="true" required />
+                <input type="text" name="email_address_check" value="" class="input--hidden">
+                <input type="hidden" name="locale" value="en">
+                <input type="hidden" name="html_type" value="simple">
+                <button class="w-full cursor-pointer rounded-[8px] bg-[#2C2C2C] md:px-[214px] py-[12px] text-white" type="submit">Bite Me!</button>
+            </form>
+        </div>
+        <img src="images/14.jpg" width="500" alt="img2">
+    </div>
+</section>
+<section class="relative overflow-x-hidden">
+    <div class="fixed inset-0 z-[-1] bg-center md:bg-[position:unset] pointer-events-none bg-[url('images/11.png')] md:bg-fixed bg-cover">
+        <div class="sticky top-0 h-screen
+                flex flex-col items-center
+                pt-[440px]">
+            <h3 class="text-4xl text-white p-5 md:p-0 text-left md:text-center">
+                Life is made of stories.<br class="hidden sm:inline" /><br class="hidden sm:inline" />
+                Become your own hero by crafting your own tales.<br class="hidden sm:inline" /><br class="hidden sm:inline" />
+                Be the storyteller, live your truth.
+            </h3>
+        </div>
+    </div>
+
+    <div class="h-[1440px]"></div>
+
+    <div class="h-screen sticky top-0">
+        <div class="absolute inset-0 z-10 bg-black pointer-events-none
+                [clip-path:polygon(-50%_0%,0%_101%,100%_101%)]
+                [backface-visibility:hidden]
+                [transform:translateZ(0)]">
+        </div>
+
+        <div class="absolute inset-0 z-20 flex items-center justify-center
+                bg-gray-200 pointer-events-none
+                [clip-path:polygon(0%_24%,100%_-1%,100%_100%,0%_76%)]
+                [backface-visibility:hidden]
+                [transform:translateZ(0)] px-8">
+            <h2 class="text-[#CC2027] font-[cormorant-sc] font-semibold text-6xl text-center leading-snug">
+                Rule the Night.<br/>Fear the Dawn.
+            </h2>
+        </div>
+    </div>
+
+    <div class="h-screen bg-[#020001]"></div>
+</section>
+<section class="bg-[#020001]">
+    <h2 class="text-[#CC2027] font-[cormorant-sc] font-semibold text-3xl md:text-6xl text-center">Future games of the Ammortal</h2>
+    <div class="flex items-center flex-col gap-6 justify-center p-[35px]  md:pb-[202px]">
+        <p class="text-white md:p-20 text-xl text-left">
+            <b>Lostlorn </b> is more than a series of games, it is a series of games that lets you play the monster.
+        </p>
+        <p class="text-white text-xl text-left">
+            <b>BADLANDER™ </b>— Honor & Glory — A Fury of Thorns: The Saga of the Hunter Blade.
+        </p>
+        <p class="text-white text-xl text-left">
+            <b>BEASTKNIGHT™ </b> Oak & Moon —A Pact of Claws: The Saga of the WereBorn Wolf.
+        </p>
+        <p class="text-white text-xl text-left">
+            <b>WITCHKNIGHT™ </b> Riddle & Rubric — A Braid of Twines: The Saga of the Magus Weaver.
+        </p>
+        <p class="text-white text-xl text-left">
+            <b>GHASTKNIGHT™ </b> Blight & Doom — An Echo of Curses: The Saga of the Ghostly Wraiths.
+        </p>
+        <p class="text-white text-xl text-left">
+            <b>SYLPHKNIGHT™ </b>  Dreams & Fables — A Lark of Wisps: The Saga of the Faerie Whisper.
+        </p>
+        <p class="text-white text-xl text-left">
+            <b>VILEKNIGHT™ </b> Dragon & Dæmon — A Ravage of Tusks: The Saga of the Draakon Imp.
+        </p>
+        <p class="text-white text-xl pt-12">
+            FANGKNIGHT is a roleplaying game of gothic horror, treachery, and
+            cursed nobility. <br> It can be played straight from the book, used to seed
+            your own sinister world, or carved apart <br> into pieces and rewoven
+            into your existing campaigns. The rules blend ritual simplicity with <br>
+            baroque depth—feasting on fantasy while bleeding it dry.
+        </p>
+    </div>
+    <div class="flex flex-col gap-8 justify-center items-center">
+        <h3 class="max-w-[519px] font-[cormorant-sc] font-bold text-3xl md:text-5xl justify-self-center-safe text-center text-[#CC2027]">Become a FangKnight. <br> Join in the ranks.</h3>
+        <form class="grid w-full md:max-w-[580px] max-w-[324px] justify-items-center gap-2.5 justify-self-center" id="sib-form" method="POST" action="https://9c6d0252.sibforms.com/serve/MUIFAN3zdGeV4rZW6r6XbQu_zlPsaONk5havhRV8YqF1E-D6OfUsat92WZs8qHrclsDUH7g_hb8toQNikrr7fOefdMhI4Jp_wLlUdcp1_vLf-hJEMCB-DSBu8owFpSnt6peR9DmfcWd5Vx0JBxw2rDX1hNxnTifqQ399360Vh6bKIwbN_WxR1KCc-keUXEBhQf-aDjSlOzJzFChA">
+            <input class="input w-10/12 rounded-[8px] bg-white px-4 py-3 text-base text-[#CC2027]" maxlength="200" type="text" id="FIRSTNAME" name="FIRSTNAME" autocomplete="off" placeholder="FIRST NAME" data-required="true" required />
+            <input class="input w-10/12 rounded-[8px] bg-white px-4 py-3 text-base text-[#CC2027]"  maxlength="200" type="text" id="LASTNAME" name="LASTNAME" autocomplete="off" placeholder="LAST NAME" />
+            <input class="input w-10/12 rounded-[8px] bg-white px-4 py-3 text-base text-[#CC2027]" type="text" id="EMAIL" name="EMAIL" autocomplete="off" placeholder="EMAIL" data-required="true" required />
+            <input type="text" name="email_address_check" value="" class="input--hidden">
+            <input type="hidden" name="locale" value="en">
+            <input type="hidden" name="html_type" value="simple">
+
+            <button class="md:w-10/12 cursor-pointer rounded-[8px] px-[114px] bg-[#2C2C2C] md:px-[214px] py-[12px] text-white" type="submit">Bite Me!</button>
+        </form>
+        <img src="images/12.png" width="338" alt="cover1" class="justify-self-end" />
+    </div>
+</section>
+</body>
+</html>
