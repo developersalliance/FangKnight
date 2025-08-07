@@ -490,6 +490,9 @@
   .pt-\[30px\] {
     padding-top: 30px;
   }
+  .pt-\[92px\] {
+    padding-top: 92px;
+  }
   .pt-\[106px\] {
     padding-top: 106px;
   }
@@ -507,6 +510,9 @@
   }
   .pb-16 {
     padding-bottom: calc(var(--spacing) * 16);
+  }
+  .pb-\[30px\] {
+    padding-bottom: 30px;
   }
   .pb-\[76px\] {
     padding-bottom: 76px;
