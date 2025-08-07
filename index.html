@@ -3,18 +3,61 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Product",
+            "name": "FangKnight",
+            "description": "A roleplaying game of gothic horror, treachery, and cursed nobility. From the quill of Mark Rein•Hagen, creator of Vampire: The Masquerade, comes a new tale of gothic horror, medieval corruption, and monstrous power.",
+            "brand": {
+                "@type": "Brand",
+                "name": "Lostlorn"
+            },
+            "image": "https://www.fangknight.com/images/13.png",
+            "url": "https://www.fangknight.com/",
+            "offers": [
+                {
+                    "@type": "Offer",
+                    "name": "Kickstarter Campaign",
+                    "availability": "https://schema.org/PreOrder",
+                    "price": "0",
+                    "priceCurrency": "USD"
+                },
+                {
+                    "@type": "Offer",
+                    "name": "Free PDF Preview",
+                    "availability": "https://schema.org/OnlineOnly",
+                    "price": "0",
+                    "priceCurrency": "USD"
+                }
+            ],
+            "subjectOf": {
+                "@type": "Game",
+                "name": "FangKnight",
+                "genre": [
+                    "Gothic Horror",
+                    "Dark Fantasy",
+                    "Roleplaying Game"
+                ],
+                "characterAttribute": "Players take on the role of a cursed knight, an irredeemable monster, a half-dead legend soaked in blood... and full of hunger.",
+                "learningResourceType": "Quick Start rules"
+            }
+        }
+    </script>
+    <meta name="description" content="Unleash your inner monster in FangKnight, the new gothic horror TTRPG from Mark Rein-Hagen, creator of Vampire: The Masquerade. Become a cursed knight in a dark fantasy world of treachery and power. Back the Kickstarter and claim your bloodline!" />
     <title>FangKnight</title>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.8/dist/cdn.min.js"></script>
     <link rel="stylesheet" href="https://use.typekit.net/hvy8trx.css">
     <link rel="stylesheet" href="https://use.typekit.net/hvy8trx.css">
     <link rel="stylesheet" href="https://use.typekit.net/mgj3yty.css">
+    <link rel="icon" type="image/x-icon" href="images/Favicon.png">
     <link href="./output.css" rel="stylesheet" />
 </head>
 <body class="h-full font-[eb-garamond]"  x-data="{ scrolled: false }" @scroll.window="scrolled = window.scrollY > 380;">
 <section>
     <div class="justify-self-center h-[732px] md:h-[1142px] w-full bg-[url('images/1.jpeg')] bg-cover bg-center bg-no-repeat md:bg-fixed">
         <div class="mx-auto max-w-[894px] pt-56  md:pt-64 text-center">
-            <img src="images/13.png" />
+            <img src="images/13.png"  alt="fangKnight rpg logo"/>
             <div class="mt-6 flex justify-center gap-4">
                 <a href="#deliverMe" >
                     <button class="bg-opacity-60 hover:bg-opacity-80 rounded-lg bg-black px-6 py-3 text-white underline cursor-pointer">Deliver Me!</button>
@@ -132,7 +175,7 @@
         <p class="md:text-2xl text-base text-white">A half-dead legend soaked in blood...</p>
         <p class="md:text-2xl text-base text-white">and full of hunger.</p>
     </div>
-    <img src="images/3.png" width="705" alt="cover1" class="justify-self-end" />
+    <img src="images/3.png" width="705" alt="FangKnight RPG" class="justify-self-end" />
 </section>
 <section
         x-data="{
@@ -186,7 +229,7 @@
         </button>
 
         <div class=" flex justify-center">
-            <img src="images/4.png" alt="img2" class="max-w-full h-auto" />
+            <img src="images/4.png" alt="Vampiress" class="max-w-full h-auto" />
         </div>
     </div>
 </section>
@@ -243,7 +286,7 @@
         </button>
 
         <div class=" flex justify-center">
-            <img src="images/5.png" alt="img2" class="max-w-full h-auto" />
+            <img src="images/5.png" alt="City of vampires" class="max-w-full h-auto" />
         </div>
     </div>
 </section>
@@ -300,7 +343,7 @@
         </button>
 
         <div class=" flex justify-center">
-            <img src="images/6.png" alt="img2" class="max-w-full h-auto" />
+            <img src="images/6.png" alt="Vampire magic" class="max-w-full h-auto" />
         </div>
     </div>
 </section>
@@ -358,7 +401,7 @@
         </button>
 
         <div class=" flex justify-center">
-            <img src="images/7.png" alt="img2" class="max-w-full h-auto" />
+            <img src="images/7.png" alt="Dark fantasy with a bite" class="max-w-full h-auto" />
         </div>
     </div>
 </section>
@@ -409,7 +452,7 @@
     </div>
 </section>
 <section class="lg:bg-[#1F1914] bg-[#000000]">
-    <h2 class="text-[#CC2027] font-[cormorant-sc] font-semibold text-6xl text-center pt-[92px] pb-[101px]">The Rules</h2>
+    <h2 class="text-[#CC2027] font-[cormorant-sc] font-semibold text-6xl text-center pt-[30px] pb-[101px]">The Rules</h2>
     <div class="grid lg:grid-cols-2 gap-2 p-5 lg:gap-0 items-center justify-items-center lg:pb-[50px]">
         <div class="max-w-[513px]">
             <p class="text-2xl text-white pb-4.5">
@@ -431,7 +474,7 @@
                 <b>Narrative-First</b>—Your story matters more than the numbers
             </p>
         </div>
-        <img src="images/9.png" alt="img2" class="row-start-1">
+        <img src="images/9.png" alt="Green vampire magic" class="row-start-1">
     </div>
 </section>
 <section class="lg:bg-[#1F1914] bg-[#000000]">
@@ -451,7 +494,7 @@
                 <button class="w-full cursor-pointer rounded-[8px] bg-[#2C2C2C] md:px-[214px] py-[12px] text-white" type="submit">Bite Me!</button>
             </form>
         </div>
-        <img src="images/14.jpg" width="500" alt="img2">
+        <img src="images/14.jpg" width="500" alt="Ancient tome of vampires">
     </div>
 </section>
 <section class="relative overflow-x-hidden">
@@ -487,7 +530,7 @@
         </div>
     </div>
 
-    <div class="h-screen bg-[#020001]"></div>
+    <div class="h-[50vh] bg-[#020001]"></div>
 </section>
 <section class="bg-[#020001]">
     <h2 class="text-[#CC2027] font-[cormorant-sc] font-semibold text-3xl md:text-6xl text-center">Future games of the Ammortal</h2>
@@ -533,7 +576,7 @@
 
             <button class="md:w-10/12 cursor-pointer rounded-[8px] px-[114px] bg-[#2C2C2C] md:px-[214px] py-[12px] text-white" type="submit">Bite Me!</button>
         </form>
-        <img src="images/12.png" width="338" alt="cover1" class="justify-self-end" />
+        <img src="images/12.png" width="338" alt="FangKnight Logo" class="justify-self-end" />
     </div>
 </section>
 </body>
